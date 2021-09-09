@@ -1,0 +1,25 @@
+
+server:
+  port : 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+app:
+  api:
+    clients:
+      url: "http://localhost:8080"
+
+info:
+  java :
+    version : ${java.version}
+    vendor: ${java.vendor}
+  classpath: ${java.class.path}
+  config :
+    api: ${app.api.clients.url}
